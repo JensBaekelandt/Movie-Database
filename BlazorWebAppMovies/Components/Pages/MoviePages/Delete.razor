@@ -8,7 +8,6 @@
 
 <h1>Delete</h1>
 
-<p>Are you sure you want to delete this?</p>
 <div>
     <h2>Movie</h2>
     <hr />
@@ -38,35 +37,16 @@
             <dt class="col-sm-2">Rating</dt>
             <dd class="col-sm-10">@movie.Rating</dd>
         </dl>
-        <EditForm method="post" Model="movie" OnValidSubmit="DeleteMovie" FormName="delete" Enhance>
-            <button type="submit" class="btn btn-danger" disabled="@(movie is null)">Delete</button> |
-            <a href="/movies">Back to List</a>
-        </EditForm>
+        <button type="button"
+                class="btn btn-danger"
+                onclick="window.location.href='@($"movies/confirmdelete?id={movie.Id}")'"
+                disabled="@(movie is null)">
+            Delete
+        </button>
+        <a href="/movies">Back to List</a>
     }
 </div>
 
 @code {
-    private Movie? movie;
 
-    [SupplyParameterFromQuery]
-    private int Id { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        using var context = DbFactory.CreateDbContext();
-        movie = await context.Movie.FirstOrDefaultAsync(m => m.Id == Id);
-
-        if (movie is null)
-        {
-            NavigationManager.NavigateTo("notfound");
-        }
-    }
-
-    private async Task DeleteMovie()
-    {
-        using var context = DbFactory.CreateDbContext();
-        context.Movie.Remove(movie!);
-        await context.SaveChangesAsync();
-        NavigationManager.NavigateTo("/movies");
-    }
 }
