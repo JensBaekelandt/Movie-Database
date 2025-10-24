@@ -9,7 +9,7 @@ namespace BlazorWebAppMovies.Data
 {
     public class BlazorWebAppMoviesContext : DbContext
     {
-        public BlazorWebAppMoviesContext (DbContextOptions<BlazorWebAppMoviesContext> options)
+        public BlazorWebAppMoviesContext(DbContextOptions<BlazorWebAppMoviesContext> options)
             : base(options)
         {
         }
