@@ -14,10 +14,10 @@ public class Movie
     [StringLength(30)]
     public string? Genre { get; set; }
 
-   [Range(0, 100)]
-  [DataType(DataType.Currency)]
-  [Column(TypeName = "decimal(18, 2)")]
-    
+    [Range(0, 100)]
+    [DataType(DataType.Currency)]
+    [Column(TypeName = "decimal(18, 2)")]
+
     public decimal Price { get; set; }
 
     [Required]
