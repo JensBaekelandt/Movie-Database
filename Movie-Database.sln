@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppMovies", "Blazo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppMovies.Api", "BlazorWebAppMovies.Api\BlazorWebAppMovies.Api.csproj", "{6F85BE05-674F-44A5-99C3-3DEAB14A0B18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppMovies.Models", "BlazorWebAppMovies.Models\BlazorWebAppMovies.Models.csproj", "{832FF03A-6D42-4DC3-ABC3-00986508E325}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppMovies.Repository", "BlazorWebAppMovies.Repository\BlazorWebAppMovies.Repository.csproj", "{0F63DF98-2505-4E28-B3B7-219034202EB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,30 @@ Global
 		{6F85BE05-674F-44A5-99C3-3DEAB14A0B18}.Release|x64.Build.0 = Release|Any CPU
 		{6F85BE05-674F-44A5-99C3-3DEAB14A0B18}.Release|x86.ActiveCfg = Release|Any CPU
 		{6F85BE05-674F-44A5-99C3-3DEAB14A0B18}.Release|x86.Build.0 = Release|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Debug|x64.Build.0 = Debug|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Debug|x86.Build.0 = Debug|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Release|x64.ActiveCfg = Release|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Release|x64.Build.0 = Release|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Release|x86.ActiveCfg = Release|Any CPU
+		{832FF03A-6D42-4DC3-ABC3-00986508E325}.Release|x86.Build.0 = Release|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Debug|x64.Build.0 = Debug|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Debug|x86.Build.0 = Debug|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Release|x64.ActiveCfg = Release|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Release|x64.Build.0 = Release|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Release|x86.ActiveCfg = Release|Any CPU
+		{0F63DF98-2505-4E28-B3B7-219034202EB1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
