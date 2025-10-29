@@ -10,7 +10,7 @@ public class Movie
 
     public DateOnly ReleaseDate { get; set; }
 
-    [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+    //[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
     [StringLength(30)]
     public string? Genre { get; set; }
 
@@ -21,6 +21,6 @@ public class Movie
     public decimal Price { get; set; }
 
     [Required]
-    [RegularExpression(@"^(G|PG|PG-13|R|NC-17)$")]
-    public string? Rating { get; set; }
+//[RegularExpression(@"^(G|PG|PG-13|R|NC-17)$")]
+public string? Rating { get; set; }
 }

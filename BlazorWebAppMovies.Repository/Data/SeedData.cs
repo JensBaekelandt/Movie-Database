@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using BlazorWebAppMovies.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorWebAppMovies.Data;
 
