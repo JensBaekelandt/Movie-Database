@@ -1,7 +1,8 @@
 @page "/movies/details"
 @using Microsoft.EntityFrameworkCore
 @using BlazorWebAppMovies.Models
-@inject IDbContextFactory<BlazorWebAppMovies.Data.BlazorWebAppMoviesContext> DbFactory
+@using BlazorWebAppMovies.Sdk
+@inject MovieSdkService MovieService
 @inject NavigationManager NavigationManager
 
 <PageTitle>Details</PageTitle>

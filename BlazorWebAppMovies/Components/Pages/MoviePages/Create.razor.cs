@@ -11,9 +11,7 @@ namespace BlazorWebAppMovies.Components.Pages.MoviePages
         // To protect from overposting attacks, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
         private async Task AddMovie()
         {
-            using var context = DbFactory.CreateDbContext();
-            context.Movie.Add(Movie);
-            await context.SaveChangesAsync();
+            await MovieService.Post(Movie);
             NavigationManager.NavigateTo("/movies");
         }
     }

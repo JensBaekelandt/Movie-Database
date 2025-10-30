@@ -1,31 +1,28 @@
-using BlazorWebAppMovies.Data;
 using BlazorWebAppMovies.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.QuickGrid;
-using Microsoft.EntityFrameworkCore;
 
 namespace BlazorWebAppMovies.Components.Pages.MoviePages
 {
-    public partial class Index : ComponentBase, IAsyncDisposable
+    public partial class Index : ComponentBase
     {
-        [Inject]
-        private IDbContextFactory<BlazorWebAppMoviesContext> DbFactory { get; set; } = default!;
-
-        private BlazorWebAppMoviesContext context = default!;
+        private List<Movie> movies = new();
         private string titleFilter = string.Empty;
         private PaginationState pagination = new PaginationState { ItemsPerPage = 10 };
 
-        private IQueryable<Movie> FilteredMovies =>
-            context.Movie.Where(m => m.Title!.Contains(titleFilter));
+        public IQueryable<Movie> FilteredMovies =>
+             movies
+                 .Where(m =>
+                     string.IsNullOrWhiteSpace(titleFilter) ||
+                     m.Title.Contains(titleFilter, StringComparison.OrdinalIgnoreCase))
+                 .AsQueryable();
 
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            context = DbFactory.CreateDbContext();
+            var result = await MovieService.Find();
+            movies = result.OrderByDescending(m => m.ReleaseDate).ToList();
         }
 
-        public async ValueTask DisposeAsync()
-        {
-            await context.DisposeAsync();
-        }
+       
     }
 }

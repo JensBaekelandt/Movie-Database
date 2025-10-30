@@ -1,7 +1,9 @@
 @page "/movies/edit"
 @using Microsoft.EntityFrameworkCore
 @using BlazorWebAppMovies.Models
-@inject IDbContextFactory<BlazorWebAppMovies.Data.BlazorWebAppMoviesContext> DbFactory
+@using BlazorWebAppMovies.Sdk
+@rendermode InteractiveServer
+@inject MovieSdkService MovieService
 @inject NavigationManager NavigationManager
 
 <PageTitle>Edit</PageTitle>

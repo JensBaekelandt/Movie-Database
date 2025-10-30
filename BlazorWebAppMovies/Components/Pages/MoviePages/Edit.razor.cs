@@ -14,8 +14,7 @@ namespace BlazorWebAppMovies.Components.Pages.MoviePages
 
         protected override async Task OnInitializedAsync()
         {
-            using var context = DbFactory.CreateDbContext();
-            Movie ??= await context.Movie.FirstOrDefaultAsync(m => m.Id == Id);
+            Movie = await MovieService.Get(Id);
 
             if (Movie is null)
             {
@@ -27,32 +26,22 @@ namespace BlazorWebAppMovies.Components.Pages.MoviePages
         // For more information, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
         private async Task UpdateMovie()
         {
-            using var context = DbFactory.CreateDbContext();
-            context.Attach(Movie!).State = EntityState.Modified;
+           if (Movie is null)
+                return;
+            
 
             try
             {
-                await context.SaveChangesAsync();
+               await MovieService.Put(Movie.Id, Movie);
+              
             }
-            catch (DbUpdateConcurrencyException)
+            catch (HttpRequestException ex)
             {
-                if (!MovieExists(Movie!.Id))
-                {
-                    NavigationManager.NavigateTo("notfound");
-                }
-                else
-                {
-                    throw;
-                }
+                Console.Error.WriteLine($"Error updating Movie: {ex.Message}");
             }
 
             NavigationManager.NavigateTo("/movies");
         }
 
-        private bool MovieExists(int id)
-        {
-            using var context = DbFactory.CreateDbContext();
-            return context.Movie.Any(e => e.Id == id);
-        }
     }
 }

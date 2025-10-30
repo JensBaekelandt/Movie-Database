@@ -1,17 +1,26 @@
 using BlazorWebAppMovies.Components;
+using BlazorWebAppMovies.Sdk;
+using BlazorWebAppMovies.Settings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using BlazorWebAppMovies.Data;
+using NuGet.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContextFactory<BlazorWebAppMoviesContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BlazorWebAppMoviesContext") ?? throw new InvalidOperationException("Connection string 'BlazorWebAppMoviesContext' not found.")));
 
 builder.Services.AddQuickGridEntityFrameworkAdapter();
 
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
+builder.Services.AddHttpClient("MovieApi", client =>
+{
+    var apiSettings = builder.Configuration.GetSection(nameof(ApiSettings)).Get<ApiSettings>();
+    if (string.IsNullOrWhiteSpace(apiSettings?.BaseUrl))
+    {
+        throw new InvalidOperationException("ApiSettings:BaseUrl configuration is missing.");
+    }
+    client.BaseAddress = new Uri(apiSettings.BaseUrl);
+});
 // Add services to the container.
+
+builder.Services.AddScoped<MovieSdkService>();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
@@ -21,7 +30,6 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    SeedData.Initialize(services);
 }
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -1,4 +1,5 @@
 ﻿using BlazorWebAppMovies.Models;
+using BlazorWebAppMovies.Sdk;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,8 +14,7 @@ namespace BlazorWebAppMovies.Components.Pages.MoviePages
 
         protected override async Task OnInitializedAsync()
         {
-            using var context = DbFactory.CreateDbContext();
-            movie = await context.Movie.FirstOrDefaultAsync(m => m.Id == Id);
+            movie = await MovieService.Get(Id);
 
             if (movie is null)
             {

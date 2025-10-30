@@ -1,8 +1,7 @@
 @page "/movies/create"
-@using Microsoft.EntityFrameworkCore
 @using BlazorWebAppMovies.Models
-
-@inject IDbContextFactory<BlazorWebAppMovies.Data.BlazorWebAppMoviesContext> DbFactory
+@using BlazorWebAppMovies.Sdk
+@inject MovieSdkService MovieService
 @inject NavigationManager NavigationManager
 
 <PageTitle>Create</PageTitle>

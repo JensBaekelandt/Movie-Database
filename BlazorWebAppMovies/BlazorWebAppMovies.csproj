@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlazorWebAppMovies.Models\BlazorWebAppMovies.Models.csproj" />
-    <ProjectReference Include="..\BlazorWebAppMovies.Repository\BlazorWebAppMovies.Repository.csproj" />
+    <ProjectReference Include="..\BlazorWebAppMovies.Sdk\BlazorWebAppMovies.Sdk.csproj" />
   </ItemGroup>
 
 </Project>

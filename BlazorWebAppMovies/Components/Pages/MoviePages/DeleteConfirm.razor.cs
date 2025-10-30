@@ -1,4 +1,5 @@
 ﻿using BlazorWebAppMovies.Models;
+using BlazorWebAppMovies.Sdk;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,8 +14,7 @@ namespace BlazorWebAppMovies.Components.Pages.MoviePages
 
         protected override async Task OnInitializedAsync()
         {
-            using var context = DbFactory.CreateDbContext();
-            movie = await context.Movie.FirstOrDefaultAsync(m => m.Id == Id);
+            movie = await MovieService.Get(Id);
 
             if (movie is null)
             {
@@ -23,10 +23,12 @@ namespace BlazorWebAppMovies.Components.Pages.MoviePages
         }
         private async Task DeleteMovie()
         {
-            using var context = DbFactory.CreateDbContext();
-            context.Movie.Remove(movie!);
-            await context.SaveChangesAsync();
-            NavigationManager.NavigateTo("/movies");
+            if (movie != null)
+            {
+                await MovieService.Delete(movie.Id);
+                NavigationManager.NavigateTo("/movies");
+            }
+           
         }
     }
 }
