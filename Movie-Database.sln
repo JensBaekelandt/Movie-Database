@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11217.181 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppMovies", "BlazorWebAppMovies\BlazorWebAppMovies.csproj", "{A1351AA3-2527-4184-885B-C1CE740CA6E4}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APi", "APi", "{2E2C55DF-69FF-4676-9912-1079E05A7E8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{57A9E6AE-2B39-4941-967E-9ACB743936CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppMovies.Dto", "BlazorWebAppMovies.Dto\BlazorWebAppMovies.Dto.csproj", "{613C02E7-116E-41C5-8146-C1FA9344B518}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,18 @@ Global
 		{2C5F1951-9010-48E5-8EE9-FA0585DCC0D6}.Release|x64.Build.0 = Release|Any CPU
 		{2C5F1951-9010-48E5-8EE9-FA0585DCC0D6}.Release|x86.ActiveCfg = Release|Any CPU
 		{2C5F1951-9010-48E5-8EE9-FA0585DCC0D6}.Release|x86.Build.0 = Release|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Debug|x64.Build.0 = Debug|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Debug|x86.Build.0 = Debug|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Release|x64.ActiveCfg = Release|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Release|x64.Build.0 = Release|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Release|x86.ActiveCfg = Release|Any CPU
+		{613C02E7-116E-41C5-8146-C1FA9344B518}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +113,7 @@ Global
 		{832FF03A-6D42-4DC3-ABC3-00986508E325} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{0F63DF98-2505-4E28-B3B7-219034202EB1} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{2C5F1951-9010-48E5-8EE9-FA0585DCC0D6} = {2E2C55DF-69FF-4676-9912-1079E05A7E8A}
+		{613C02E7-116E-41C5-8146-C1FA9344B518} = {2E2C55DF-69FF-4676-9912-1079E05A7E8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B6EF322-EF5D-4BB5-9E9B-55E48F4BA7D9}
